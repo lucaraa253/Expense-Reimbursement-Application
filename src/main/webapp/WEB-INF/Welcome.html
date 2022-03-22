@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function validateSignUpForm() {
+		var uname1 = document.getElementById("username").value;
+		var uname2 = document.signupform.username.value;
+		var pwd = document.forms[0].elements[1].value;
+		var confirmpwd = document.forms[0].elements[2].value;
+
+		var checked1 = document.getElementById('email').checked
+		var checked2 = document.getElementById('sms').checked
+		var checked3 = document.getElementById('courier').checked
+
+		var qual = document.signupform.qualification.options.selectedIndex;
+
+		/* 		var radio1 = document.getElementById('radio1').checked;
+		 var radio2 = document.getElementById('radio2').checked;
+		 var radio3 = document.getElementById('radio3').checked; */
+
+		var radio = new Array();
+		for (i = 3; i <= 5; i++) {
+			radio[i] = document.forms[0].elements[i].checked
+		}
+
+		if (uname1.length == 0) {
+			alert("Please enter username");
+			return false;
+		} else if (pwd.length == 0) {
+			alert("Please enter password");
+			return false;
+		} else if (pwd != confirmpwd) {
+			alert("Password and confirm password does not match");
+			return false;
+		} else if (radio[0] == 0 && radio[1] == 0 && radio[2] == 0) {
+			alert("Please select a gender");
+			return false;
+		} else if (!checked1 && !checked2 && !checked3) {
+			alert("Please Pick a Notification");
+			return false;
+		} else if (qual == 0) {
+			alert("Please select a qualification");
+			return false;
+		}
+
+	}
+
+	function addInput() {
+		var mainDiv = document.getElementById('myDiv1');
+		var marriedButton = document.getElementById('marriedButton');
+
+		var newTextBox = document.createElement('input');
+		newTextBox.type = 'text';
+		newTextBox.setAttribute('id', 'spousename');
+
+		marriedButton.innerText ="Spouse Name : "
+		mainDiv.append(newTextBox);
+
+	}
+</script>
+<body>
+<h1>View all users </h1>
+
+</body>
+</html>
