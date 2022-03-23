@@ -36,12 +36,15 @@ public class ExecuteUpdateController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		String id = (String) session.getAttribute("id");
-//		String uname = request.getParameter("username");
-		String description = request.getParameter("description");
-		String ammount = request.getParameter("ammount");
+		
+		String id3 = (String) request.getParameter("id");
+		
+
+		String description = (String) request.getParameter("description");
+		String ammount = (String) request.getParameter("ammount");
+		int thisId = Integer.parseInt(id3);
 		int ammount2 = Integer.parseInt(ammount);
-		int id1 = Integer.parseInt(id);
+		
 		
 		
 		Request req = new Request(description, ammount2);
@@ -52,7 +55,7 @@ public class ExecuteUpdateController extends HttpServlet {
 		
 		RequestDAO reqDAO = new RequestDAOImpl();
 		
-		result = reqDAO.updateRequest(req, id1);
+		result = reqDAO.updateRequest(req, thisId);
 		
 		
 		

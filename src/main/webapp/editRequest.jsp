@@ -11,13 +11,11 @@
 </head>
 <body>
 	<%
-		HttpSession newsession = request.getSession();
-		String actualId = (String) session.getAttribute("id");
-		int thisId = Integer.parseInt(actualId);
+		String id3 = (String) request.getParameter("id");
+		int thisId = Integer.parseInt(id3);
 		RequestDAO requestDAO = new RequestDAOImpl();
 		Request req = new Request();
 		req = requestDAO.viewSingleRequest(thisId);
-	
 	%>
 	
 	<form class="form-style" action="ExecuteUpdateController"
@@ -32,6 +30,7 @@
 				<td><input type="number" name="ammount" id="ammount" value="<%= req.getAmount() %>">
 			</tr>
 			<tr>
+				<input type="hidden" name="id" id="id" value="<%= thisId %>">
 				<td><input type="submit" value="SignUp"></td>
 				<td><input type="reset" value="Clear"></td>
 			</tr>

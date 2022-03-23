@@ -49,7 +49,7 @@ HttpSession session = request.getSession();
 			System.out.println("Congratulations : your request has been deleted");
 			
 			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("welcome.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("welcomeEmployee.jsp");
 			dispatcher.include(request, response);
 			
 			

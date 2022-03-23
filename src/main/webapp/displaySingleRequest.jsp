@@ -13,18 +13,16 @@
 </head>
 <body>
 		<%
-		HttpSession newsession = request.getSession();
-		String actualId = (String) session.getAttribute("id");
-		int thisId = Integer.parseInt(actualId);
+		String id3 = (String) request.getParameter("id");
+		int thisId = Integer.parseInt(id3);
 		RequestDAO requestDAO = new RequestDAOImpl();
 		Request req = new Request();
 		req = requestDAO.viewSingleRequest(thisId);
-	
-	%>
-	<h1><a href="displayRequests.jsp">View all Requests</a></h1>
-	<h1><a href="submitRequest.html">Submit Request</a></h1>
-	<h1><a href="DisplayUserDetails.jsp">My Information</a></h1>
-	<h1><a href="index.jsp">Log out</a></h1>
+		%>
+	<h1 style="margin: 0 auto; text-align:center;"><a href="displayRequests.jsp">View all Requests</a></h1>
+	<h1 style="margin: 0 auto; text-align:center;"><a href="submitRequest.html">Submit Request</a></h1>
+	<h1 style="margin: 0 auto; text-align:center;"><a href="DisplayUserDetails.jsp">My Information</a></h1>
+	<h1 style="margin: 0 auto; text-align:center;"><a href="index.jsp">Log out</a></h1>
 	<table border="2" cellspacing="10" cellpadding="10" class="table table-striped">
 	<th>Request Id</th><th>Description</th><th>Ammount</th><th>Approved</th><th>Employee ID</th>
 		<tr>
@@ -33,13 +31,8 @@
 		<td><%= req.getAmount() %></td>
 		<td><%= req.isApproved() %></td>
 		<td><%= req.getReqId() %></td>
-		
 		</tr>
-	
-	
 	</table>
 	<a href="index.jsp">Logout</a>
-		
-
 </body>
 </html>

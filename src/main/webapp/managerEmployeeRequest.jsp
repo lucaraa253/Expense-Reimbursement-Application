@@ -21,7 +21,7 @@
 	%>
 	
 	
-	<h1 style="margin: 0 auto; text-align:center;">All of my requests</h1>
+	<h1 style="margin: 0 auto; text-align:center;">All users requests</h1>
 	
 	<h1 style="margin: 0 auto; text-align:center;"><a href="welcome.jsp">Home Page</a></h1>
 	<h1 style="margin: 0 auto; text-align:center;"><a href="managerViewAll.jsp">All Requests</a></h1>
