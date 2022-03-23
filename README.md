@@ -6,7 +6,7 @@ This is a web based application utilizing Java, Postgres, Maven, Junit(testing),
 
 # Functionality
 
-Manager are able to : 
+Managers are able to : 
 ----------
 Log in/logout
 View manager home page
@@ -20,7 +20,7 @@ View all employees
 
 
 
-Employee are able to : 
+Employees are able to : 
 ----------
 Log in/logout
 View Employee Home page
