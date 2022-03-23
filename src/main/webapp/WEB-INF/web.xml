@@ -58,6 +58,60 @@
   	<description></description>
   	<servlet-class>com.training.controller.ShowRequest</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>EditRequestController</servlet-name>
+  	<display-name>EditRequestController</display-name>
+  	<description></description>
+  	<servlet-class>com.training.controller.EditRequestController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ExecuteUpdateController</servlet-name>
+  	<display-name>ExecuteUpdateController</display-name>
+  	<description></description>
+  	<servlet-class>com.training.controller.ExecuteUpdateController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ManagerShowRequest</servlet-name>
+  	<display-name>ManagerShowRequest</display-name>
+  	<description></description>
+  	<servlet-class>com.training.controller.ManagerShowRequest</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ExecuteApproved</servlet-name>
+  	<display-name>ExecuteApproved</display-name>
+  	<description></description>
+  	<servlet-class>com.training.controller.ExecuteApproved</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DeleteRequest</servlet-name>
+  	<display-name>DeleteRequest</display-name>
+  	<description></description>
+  	<servlet-class>com.training.controller.DeleteRequest</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DeleteRequest2Controller</servlet-name>
+  	<display-name>DeleteRequest2Controller</display-name>
+  	<description></description>
+  	<servlet-class>com.training.controller.DeleteRequest2Controller</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DeleteSpecificRequest</servlet-name>
+  	<display-name>DeleteSpecificRequest</display-name>
+  	<description></description>
+  	<servlet-class>com.training.controller.DeleteSpecificRequest</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>EmployeeShowRequest</servlet-name>
+  	<display-name>EmployeeShowRequest</display-name>
+  	<description></description>
+  	<servlet-class>com.training.controller.EmployeeShowRequest</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ShowEmployeeRequests</servlet-name>
+  	<display-name>ShowEmployeeRequests</display-name>
+  	<description></description>
+  	<servlet-class>com.training.controller.ShowEmployeeRequests</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>SignInController</servlet-name>
   	<url-pattern>/SignInController</url-pattern>
@@ -93,5 +147,41 @@
   <servlet-mapping>
   	<servlet-name>ShowRequest</servlet-name>
   	<url-pattern>/ShowRequest</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EditRequestController</servlet-name>
+  	<url-pattern>/EditRequestController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ExecuteUpdateController</servlet-name>
+  	<url-pattern>/ExecuteUpdateController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ManagerShowRequest</servlet-name>
+  	<url-pattern>/ManagerShowRequest</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ExecuteApproved</servlet-name>
+  	<url-pattern>/ExecuteApproved</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteRequest</servlet-name>
+  	<url-pattern>/DeleteRequest</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteRequest2Controller</servlet-name>
+  	<url-pattern>/DeleteRequest2Controller</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteSpecificRequest</servlet-name>
+  	<url-pattern>/DeleteSpecificRequest</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmployeeShowRequest</servlet-name>
+  	<url-pattern>/EmployeeShowRequest</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ShowEmployeeRequests</servlet-name>
+  	<url-pattern>/ShowEmployeeRequests</url-pattern>
   </servlet-mapping>
 </web-app>

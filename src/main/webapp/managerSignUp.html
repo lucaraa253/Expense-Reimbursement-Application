@@ -10,44 +10,31 @@
 <script type="text/javascript">
 	function validateSignUpForm() {
 		var uname1 = document.getElementById("username").value;
-		var uname2 = document.signupform.username.value;
-		var pwd = document.forms[0].elements[1].value;
-		var confirmpwd = document.forms[0].elements[2].value;
+		var pwd = document.getElementById("password").value;
+		var fname = document.getElementById("firstName").value;
+		var lname = document.getElementById("lastName").value;
+		
 
-		var checked1 = document.getElementById('email').checked
-		var checked2 = document.getElementById('sms').checked
-		var checked3 = document.getElementById('courier').checked
+		
 
-		var qual = document.signupform.qualification.options.selectedIndex;
+		
 
-		//var radio1 = document.getElementById('radio1').checked;
-		//var radio2 = document.getElementById('radio2').checked;
-		//var radio3 = document.getElementById('radio3').checked;
-		var radio = new Array();
-		for(i=3; i<=5;i++){
-			radio[i]=document.forms[0].elements[i].checked
-		}
+		
 
-		if (uname1.length == 0) {
-			alert("Please enter username");
+		if (uname1.length < 8) {
+			alert("Please enter username with at least 8 characters");
 			return false;
-		} else if (pwd.length == 0) {
-			alert("Please enter password");
+		} else if (pwd.length < 8) {
+			alert("Please enter password with at least 8 characters");
 			return false;
-		} else if (pwd != confirmpwd) {
-			alert("Password and confirm password does not match");
+		} else if (fname.length < 8) {
+			alert("Please enter first name with at least 8 characters");
 			return false;
-		}else if (radio[0] == 0 && radio[1] == 0 && radio[2] == 0) {
-			alert("Please select a gender");
+		} else if (lname.length < 8) {
+			alert("Please enter last name with at least 8 characters");
 			return false;
-		} 
-		else if (!checked1 && !checked2 && !checked3) {
-			alert("Please Pick a Notification");
-			return false;
-		} else if (qual == 0) {
-			alert("Please select a qualification");
-			return false;
-		} 
+		}  
+		 
 
 	}
 </script>

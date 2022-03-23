@@ -12,20 +12,17 @@ import javax.servlet.http.HttpSession;
 
 import com.training.ers.dao.RequestDAO;
 import com.training.ers.dao.RequestDAOImpl;
-import com.training.ers.dao.UserDAO;
-import com.training.ers.dao.UserDAOImpl;
-import com.training.ers.models.Request;
 
 /**
- * Servlet implementation class ShowRequest
+ * Servlet implementation class DeleteRequest2Controller
  */
-public class ShowRequest extends HttpServlet {
+public class DeleteRequest2Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ShowRequest() {
+    public DeleteRequest2Controller() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,29 +31,44 @@ public class ShowRequest extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+HttpSession session = request.getSession();
 		
-//		String id = request.getParameter("id");
-//		int actualId = Integer.parseInt(id);
-//		boolean result;
+		String id3 = (String) request.getParameter("id");
+		
+		int id2= Integer.parseInt(id3);
+		
+		boolean result;
+		RequestDAO reqDAO = new RequestDAOImpl();
+		
+		result = reqDAO.deleteRequest(id2);
 		
 		
-		System.out.println("Number 1 called");
 		
-//		HttpSession session = request.getSession();
-//		session.setAttribute("id", id);
-		
-		
-		System.out.println("Number 2 called");
+		if (result) {
+			
+			System.out.println("Congratulations : your request has been deleted");
 			
 			
-		RequestDispatcher dispatcher = request.getRequestDispatcher("displaySingleRequest.jsp");
-		dispatcher.include(request, response);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("welcome.jsp");
+			dispatcher.include(request, response);
 			
-		System.out.println("Number 3 called");
+			
+			
+			
+			
+			
+			
+		}
+			
+		else {
+			PrintWriter out = response.getWriter();
+			response.setContentType("text/html");
+			out.println("<html><body>");
+			out.println("Your request was not deleted " );
 			
 		
-			
-		
+			out.println("</html></body>");
+		}
 	}
 
 	/**

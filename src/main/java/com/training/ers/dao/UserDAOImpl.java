@@ -91,11 +91,11 @@ public class UserDAOImpl implements UserDAO {
 			ResultSet res = stat.executeQuery("select * from employees2");
 			while (res.next()) {
 				User user = new User();
-				
-				user.setUsername(res.getString(1));
-				user.setPassword(res.getString(2));
-				user.setFirstName(res.getString(3));
-				user.setPassword(res.getString(4));
+				user.setId(res.getInt(1));
+				user.setUsername(res.getString(2));
+				user.setPassword(res.getString(3));
+				user.setFirstName(res.getString(4));
+				user.setLastName(res.getString(5));
 				
 				users.add(user);
 

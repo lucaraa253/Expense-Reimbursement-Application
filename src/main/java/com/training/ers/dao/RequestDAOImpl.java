@@ -177,4 +177,175 @@ public class RequestDAOImpl implements RequestDAO {
 		return request;
 	}
 
+	@Override
+	public boolean updateRequest( Request request,int id) {
+		System.out.println("Updating Request");
+		PreparedStatement statement = null;
+		int rows = 0;
+		try {
+			System.out.println("At least it got here");
+			statement = connection.prepareStatement("update requests set description = ?, amount = ? where id = ?");
+			statement.setString(1, request.getDescription());
+			statement.setInt(2, request.getAmount());
+			statement.setInt(3, id);
+			
+		
+
+			rows = statement.executeUpdate();
+			System.out.println();
+			System.out.println(rows + " requests created");
+			
+			statement.close();
+			statement.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if (rows == 0) {
+			System.out.println("Request created");
+			
+			
+			return false;
+			
+	        
+		}
+			
+		else {
+			logger.info("Created a request on " + new java.util.Date());
+			
+	        
+			return true;
+		}
+	}
+
+	@Override
+	public boolean deleteSingleRequest(int id) {
+		System.out.println("Deleting Request");
+		PreparedStatement statement = null;
+		int rows = 0;
+		try {
+			System.out.println("At least it got here");
+			statement = connection.prepareStatement("delete from requests where id = ?");
+			
+			statement.setInt(1, id);
+			
+		
+
+			rows = statement.executeUpdate();
+			System.out.println();
+			System.out.println(rows + " requests deleted");
+			
+			statement.close();
+			statement.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if (rows == 0) {
+			System.out.println("Request deleted");
+			
+			
+			return false;
+			
+	        
+		}
+			
+		else {
+			logger.info("Created a request on " + new java.util.Date());
+			
+	        
+			return true;
+		}
+	}
+
+	@Override
+	public boolean approveRequest(int id) {
+		System.out.println("Approving Request");
+		Statement stat;
+		
+		
+		PreparedStatement statement = null;
+		int rows = 0;
+		try {
+			stat = connection.createStatement();
+			rows = stat.executeUpdate("update requests set approved = 'true' where id = "+ id);
+			System.out.println("This got called");
+//			statement = connection.prepareStatement("update requests set approved = "+"'"+"true"+"'"+" where id = ?");
+			
+//			statement.setInt(1, id);
+			
+		
+			System.out.println("This did too");
+//			rows = statement.executeUpdate();
+			System.out.println();
+			System.out.println(rows + " requests updated");
+			
+			stat.close();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if (rows == 0) {
+			System.out.println("Request not updated");
+			
+			
+			return false;
+			
+	        
+		}
+			
+		else {
+			logger.info("updated a request on " + new java.util.Date());
+			
+	        
+			return true;
+		}
+	}
+
+	@Override
+	public boolean deleteRequest(int id) {
+		System.out.println("Approving Request");
+		Statement stat;
+		
+		
+		PreparedStatement statement = null;
+		int rows = 0;
+		try {
+//			stat = connection.createStatement();
+//			rows = stat.executeUpdate("delete from requests where id = "+ id);
+			
+			statement = connection.prepareStatement("delete from requests where id = ?");
+			
+			statement.setInt(1, id);
+			
+		
+			
+			rows = statement.executeUpdate();
+			System.out.println();
+			System.out.println(rows + " requests deleted");
+			
+			statement.close();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if (rows == 0) {
+			System.out.println("Request not deleted");
+			
+			
+			return false;
+			
+	        
+		}
+			
+		else {
+			logger.info("deleted a request on " + new java.util.Date());
+			
+	        
+			return true;
+		}
+	}
+
 }

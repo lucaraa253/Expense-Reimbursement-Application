@@ -10,7 +10,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<link type="text/css" rel="stylesheet" href="styles.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
 </head>
 <body>
 	<%
@@ -19,10 +21,13 @@
 	User user = userDAO.getUsersByUsername(username);
 	
 	%>
+	<h1 style="margin: 0 auto; text-align:center;">My Details</h1>
+	<h3 style="margin: 0 auto; text-align:center;"><a href="welcomeEmployee.jsp">Home Page</a></h3>
+	<h3 style="margin: 0 auto; text-align:center;"><a href="displayRequests.jsp">View all Requests</a></h3>
+	<h3 style="margin: 0 auto; text-align:center;"><a href="submitRequest.html">Submit Request</a></h3>
+	<h3 style="margin: 0 auto; text-align:center;"><a href="index.jsp">Log out</a></h3>
 	
-	<h2>You are logged in as : <%= username %></h2>
-	<h1>List of all the users</h1>
-	<table border="2" cellspacing="10" cellpadding="10">
+	<table border="2" cellspacing="10" cellpadding="10" class="table table-striped">
 	<th>User Id</th><th>UserName</th><th>First Name</th><th>Last Name</th><th>Password</th>
 		<tr>
 		<td><%= user.getId() %></td>
@@ -35,6 +40,5 @@
 	
 	
 	</table>
-	<a href="index.jsp">Logout</a>
 </body>
 </html>

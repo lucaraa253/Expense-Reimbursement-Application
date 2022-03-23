@@ -1,7 +1,6 @@
 package com.training.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,22 +9,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.training.ers.dao.RequestDAO;
-import com.training.ers.dao.RequestDAOImpl;
-import com.training.ers.dao.UserDAO;
-import com.training.ers.dao.UserDAOImpl;
-import com.training.ers.models.Request;
-
 /**
- * Servlet implementation class ShowRequest
+ * Servlet implementation class EditRequestController
  */
-public class ShowRequest extends HttpServlet {
+public class EditRequestController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ShowRequest() {
+    public EditRequestController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,10 +27,8 @@ public class ShowRequest extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String id = request.getParameter("id");
 		
-//		String id = request.getParameter("id");
-//		int actualId = Integer.parseInt(id);
-//		boolean result;
 		
 		
 		System.out.println("Number 1 called");
@@ -49,14 +40,10 @@ public class ShowRequest extends HttpServlet {
 		System.out.println("Number 2 called");
 			
 			
-		RequestDispatcher dispatcher = request.getRequestDispatcher("displaySingleRequest.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("editRequest.jsp");
 		dispatcher.include(request, response);
 			
 		System.out.println("Number 3 called");
-			
-		
-			
-		
 	}
 
 	/**

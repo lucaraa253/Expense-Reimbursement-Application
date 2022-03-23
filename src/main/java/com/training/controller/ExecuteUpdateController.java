@@ -15,17 +15,18 @@ import com.training.ers.dao.RequestDAOImpl;
 import com.training.ers.dao.UserDAO;
 import com.training.ers.dao.UserDAOImpl;
 import com.training.ers.models.Request;
+import com.training.ers.models.User;
 
 /**
- * Servlet implementation class ShowRequest
+ * Servlet implementation class ExecuteUpdateController
  */
-public class ShowRequest extends HttpServlet {
+public class ExecuteUpdateController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ShowRequest() {
+    public ExecuteUpdateController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,29 +35,48 @@ public class ShowRequest extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-//		String id = request.getParameter("id");
-//		int actualId = Integer.parseInt(id);
-//		boolean result;
-		
-		
-		System.out.println("Number 1 called");
-		
-//		HttpSession session = request.getSession();
-//		session.setAttribute("id", id);
+		HttpSession session = request.getSession();
+		String id = (String) session.getAttribute("id");
+//		String uname = request.getParameter("username");
+		String description = request.getParameter("description");
+		String ammount = request.getParameter("ammount");
+		int ammount2 = Integer.parseInt(ammount);
+		int id1 = Integer.parseInt(id);
 		
 		
-		System.out.println("Number 2 called");
+		Request req = new Request(description, ammount2);
+		
+		
+		
+		boolean result;
+		
+		RequestDAO reqDAO = new RequestDAOImpl();
+		
+		result = reqDAO.updateRequest(req, id1);
+		
+		
+		
+		if (result) {
+			
+			System.out.println("Congratulations : your request has been updated");
 			
 			
-		RequestDispatcher dispatcher = request.getRequestDispatcher("displaySingleRequest.jsp");
-		dispatcher.include(request, response);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("welcomeEmployee.jsp");
+			dispatcher.include(request, response);
 			
-		System.out.println("Number 3 called");
+			
+			
+		}
+			
+		else {
+			PrintWriter out = response.getWriter();
+			response.setContentType("text/html");
+			out.println("<html><body>");
+			out.println("You could not be logged in " );
 			
 		
-			
-		
+			out.println("</html></body>");
+		}
 	}
 
 	/**
