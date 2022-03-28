@@ -43,7 +43,7 @@
 		<td><%= req.isApproved() ? "Yes" : "No" %></td>
 		<td><form action="ManagerShowRequest"><input type="hidden" value="<%= req.getId() %>" name="id"></input><input type="submit" value="See Details"></input></form></td>
 		<td><form action="ExecuteApproved"><input type="hidden" value="<%= req.getId() %>" name="id"></input><input type="submit" value="Approve Request"></input></form></td>
-		<td><form action="DeleteRequest2Controller"><input type="hidden" value="<%= req.getId() %>" name="id"></input><input type="submit" value="Delete Request"></input></form></td>
+		<td><form action="DeleteRequest3Controller"><input type="hidden" value="<%= req.getId() %>" name="id"></input><input type="submit" value="Delete Request"></input></form></td>
 		
 		</tr>
 	<%} %>

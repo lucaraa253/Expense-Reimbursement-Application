@@ -13,18 +13,16 @@ import javax.servlet.http.HttpSession;
 import com.training.ers.dao.RequestDAO;
 import com.training.ers.dao.RequestDAOImpl;
 
-
-
 /**
- * Servlet implementation class DeleteRequest
+ * Servlet implementation class DeleteRequest3Controller
  */
-public class DeleteRequestController extends HttpServlet {
+public class DeleteRequest3Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DeleteRequestController() {
+    public DeleteRequest3Controller() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,7 +31,7 @@ public class DeleteRequestController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
+HttpSession session = request.getSession();
 		
 		String id3 = (String) request.getParameter("id");
 		

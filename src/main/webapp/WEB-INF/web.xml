@@ -112,6 +112,12 @@
   	<description></description>
   	<servlet-class>com.training.controller.ShowEmployeeRequests</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>DeleteRequest3Controller</servlet-name>
+  	<display-name>DeleteRequest3Controller</display-name>
+  	<description></description>
+  	<servlet-class>com.training.controller.DeleteRequest3Controller</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>SignInController</servlet-name>
   	<url-pattern>/SignInController</url-pattern>
@@ -183,5 +189,9 @@
   <servlet-mapping>
   	<servlet-name>ShowEmployeeRequests</servlet-name>
   	<url-pattern>/ShowEmployeeRequests</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteRequest3Controller</servlet-name>
+  	<url-pattern>/DeleteRequest3Controller</url-pattern>
   </servlet-mapping>
 </web-app>
